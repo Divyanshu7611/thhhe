@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import Form from '@/components/Events/RoboWar/Forms'
 
-export default function () {
+export default function UserRegistration() {
   const session = useSession()
   const [isRegisteredUser, setRegisteredUser] = useState<boolean>(false)
   useEffect(() => {

@@ -16,9 +16,12 @@ export default function Starts() {
   const router = useRouter()
   const [date, setDate] = useState<any>(null)
 
-  const navigate = useCallback(name => {
-    router.push(name)
-  }, [])
+  const navigate = useCallback(
+    name => {
+      router.push(name)
+    },
+    [router],
+  )
 
   useEffect(() => {
     setDate(new Date(2024, 0, 22))

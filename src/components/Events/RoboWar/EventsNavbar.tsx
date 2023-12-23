@@ -11,10 +11,13 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [Scrolling, setIsScrolled] = useState(false)
 
-  const navigate = useCallback(name => {
-    router.push(name)
-    setIsOpen(false)
-  }, [])
+  const navigate = useCallback(
+    name => {
+      router.push(name)
+      setIsOpen(false)
+    },
+    [router],
+  )
   useEffect(() => {
     const HandleScroll = () => {
       if (window.scrollY > 50) {

@@ -1,14 +1,12 @@
 import React from 'react'
+import Image from 'next/image'
 
-export default function () {
+export default function About() {
   return (
     <div>
       <section
         className="flex items-center justify-center mx-auto gap-8 py-8 px-12 bg-blend-multiply max-w-7xl"
         id="roboabout"
-        // style={{
-        //   clipPath: 'polygon(50px 0, 100% 0, 100% calc(100% - 50px), calc(100% - 50px) 100%, 0 100%, 0 50px)',
-        // }}
       >
         <div className="flex-grow w-1/2 hidden md:block">
           <div
@@ -17,9 +15,11 @@ export default function () {
               clipPath: 'polygon(50px 0, 100% 0, 100% calc(100% - 50px), calc(100% - 50px) 100%, 0 100%, 0 50px)',
             }}
           >
-            <img
+            <Image
               src="/static/thar-logo.png"
               alt=""
+              height="500"
+              width="500"
               className="h-full w-full bg-black/70"
               style={{
                 clipPath: 'polygon(50px 0, 100% 0, 100% calc(100% - 50px), calc(100% - 50px) 100%, 0 100%, 0 50px)',

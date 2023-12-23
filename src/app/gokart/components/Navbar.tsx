@@ -11,10 +11,13 @@ export default function Navbar() {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
 
-  const navigate = useCallback(name => {
-    router.push(name)
-    setIsOpen(false)
-  }, [])
+  const navigate = useCallback(
+    name => {
+      router.push(name)
+      setIsOpen(false)
+    },
+    [router],
+  )
 
   return (
     <div className={`navbar absolute top-0 right-0 z-30 bg-opacity-80 hover:bg-opacity-90`}>
