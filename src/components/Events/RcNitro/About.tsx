@@ -34,7 +34,7 @@ export default function About() {
             their innovative genius by designing and constructing remote-controlled or autonomous robots primed for
             simulated combat. These mechanical gladiators are armed with an array of offensive and defensive weaponry,
             armor, and maneuverability features. Engage in intense showdowns as these robots clash in simulated battles,
-            displaying tactical prowess, resilience, and technological prowess. Whether you're a mastermind in robotics
+            displaying tactical prowess, resilience, and technological prowess. Whether you are a mastermind in robotics
             or a newcomer to engineering marvels, Robo-War offers an electrifying platform to witness the ultimate clash
             of machines. Join us for a riveting spectacle where creativity meets combat, and witness the epic battles
             unfold in this thrilling Robo-War event!
