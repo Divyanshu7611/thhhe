@@ -17,12 +17,8 @@ export default function Team() {
         }}
       >
         <div className="flex flex-wrap justify-center items-center gap-10">
-          <h1 className="text-2xl md:text-5xl">
-            Dishantar Jangid
-            <br /> <span className="text-lg md:text-2xl">Civil Branch</span>
-          </h1>
-
-          <TeamCard name={'RoboWar'} imgUrl={'/teachers/vc.jpg'} post={'Coordinator'} />
+          <TeamCard name={'Arpit Pareta'} imgUrl={'/teachers/unknown.jpg'} post={'RcNitro Coordinator'} />
+          <TeamCard name={'Abhijeet Bhuwalia'} imgUrl={'/teachers/unknown.jpg'} post={'RcNitro Coordinator'} />
         </div>
       </main>
     </section>

@@ -16,7 +16,7 @@ export default function About() {
             }}
           >
             <Image
-              src="/static/thar-logo.png"
+              src="/events/AboutRobo.png"
               alt=""
               height="500"
               width="500"

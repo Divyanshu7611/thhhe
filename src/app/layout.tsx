@@ -1,8 +1,6 @@
 import Navbar from '@/components/global/Navbar'
 import { Montserrat } from 'next/font/google'
 import type { Metadata } from 'next'
-import Stars from '@/components/global/Stars'
-import Footer from '@/components/global/Footer'
 import NextAuthProvider from './Provider'
 
 // Import Swiper styles
@@ -22,6 +20,7 @@ export const metadata: Metadata = {
   title: 'THAR- The Techno-management fest of RTU',
   description:
     'THAR is a 3-day Technical Fiesta of stimulating technical adventures and staggering innovations with exhibitions and lively pro-nights.',
+
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

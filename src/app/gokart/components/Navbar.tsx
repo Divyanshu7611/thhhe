@@ -1,28 +1,33 @@
 'use client'
 import React from 'react'
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import rtulogo from '../assets/rtuLogo.png'
 import tharlogo from '../assets/tharLogo.png'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
 export default function Navbar() {
-  const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
+  const [Scrolling, setIsScrolled] = useState(false)
+  useEffect(() => {
+    const HandleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
 
-  const navigate = useCallback(
-    name => {
-      router.push(name)
-      setIsOpen(false)
-    },
-    [router],
-  )
+    window.addEventListener('scroll', HandleScroll)
+    return () => {
+      window.removeEventListener('scroll', HandleScroll)
+    }
+  }, [])
 
   return (
-    <div className={`navbar absolute top-0 right-0 z-30 bg-opacity-80 hover:bg-opacity-90`}>
+    <div className={`navbar fixed top-0 right-0 z-30 bg-opacity-80 hover:bg-opacity-90`}>
       <div className="flex flex-col">
-        <div className="lg:hidden md:hidden absolute top-0 right-0 m-5">
+        <div className="lg:hidden md:hidden z-30 top-0 right-0 m-5">
           <button onClick={() => setIsOpen(!isOpen)}>
             <svg className="h-6 w-6 text-white cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {isOpen ? (
@@ -37,68 +42,45 @@ export default function Navbar() {
 
       {/* Collapsible menu for mobile */}
       {isOpen && (
-        <nav className="lg:hidden md:hidden">
+        <nav className="lg:hidden md:hidden fixed top-0 left-0">
           <ul className="flex flex-col gap-3 backdrop:blur-md top-0 right-0 bg-black h-screen w-screen justify-center items-center">
             <li>
-              <button onClick={() => navigate('/gokart')}>HOME</button>
+              <Link href="/gokart">HOME</Link>
             </li>
             <li>
-              <button onClick={() => navigate('#')}>LINK</button>
+              <Link href="#goabout">ABOUT US</Link>
             </li>
             <li>
-              <button onClick={() => navigate('#')}>LINK</button>
+              <Link href="#goteam">TEAM</Link>
             </li>
             <li>
-              <button onClick={() => navigate('#')}>LINK</button>
-            </li>
-            <li>
-              <button onClick={() => navigate('#')}>LINK</button>
-            </li>
-            <li>
-              <button onClick={() => navigate('/')}>Go Back</button>
+              <Link href="#">RULEBOOK</Link>
             </li>
           </ul>
         </nav>
       )}
 
       {/* for larger screens */}
-      <nav className="hidden justify-between w-full lg:flex lg:items-center lg:m-4 md:flex md:items-center md:ml-4">
+      <nav
+        className={`hidden justify-between fixed w-screen top-0 left-0 lg:flex lg:items-center md:flex transition-all md:items-center
+      ${Scrolling ? 'bg-grey backdrop-blur-2xl p-2' : 'bg-transparent p-1'}
+      `}
+      >
         <div>
           <Image alt="" src={rtulogo} height={60} width={60} />
         </div>
-        <ul className="border flex justify-evenly gap-10 w-3/4 rounded-full font-bold bg-[#00000052] p-5">
-          {/* <li>
-            <button
-              onClick={() => navigate('/')}
-              className="border border-black rounded-lg p-2 text-black hover:bg-slate-300 hover:text-black transition-all duration-500 bg-[#dce0e8] shadow-gray-900 shadow-sm font-medium"
-            >
-              <div className="flex justify-center place-items-baseline gap-2 items-center">
-                <h4 className="">Go Back</h4>
-              </div>
-            </button>
-          </li> */}
-          <li>
-            <button onClick={() => navigate('/gokart')} className="text-[#ff6b00]">
-              Home
-            </button>
+        <ul className="border flex justify-evenly gap-10 w-2/4 rounded-full font-bold bg-[#00000052] p-3">
+          <li className="text-[#ff6b00]">
+            <Link href="/gokart">HOME</Link>
           </li>
           <li>
-            <button onClick={() => navigate('#')}>LINK</button>
+            <Link href="#goabout">ABOUT US</Link>
           </li>
           <li>
-            <button onClick={() => navigate('#')}>LINK</button>
+            <Link href="#goteam">TEAM</Link>
           </li>
           <li>
-            <button onClick={() => navigate('#')}>LINK</button>
-          </li>
-          <li>
-            <button onClick={() => navigate('#')}>LINK</button>
-          </li>
-          <li>
-            <button onClick={() => navigate('#')}>LINK</button>
-          </li>
-          <li>
-            <button onClick={() => navigate('#')}>LINK</button>
+            <Link href="#">RULEBOOK</Link>
           </li>
         </ul>
         <Image alt="" src={tharlogo} height={60} width={60} />

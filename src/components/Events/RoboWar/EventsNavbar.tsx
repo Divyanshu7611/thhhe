@@ -75,7 +75,7 @@ export default function Navbar() {
       {/* for larger screens */}
       <nav
         className={`hidden justify-between fixed w-screen top-0 left-0 lg:flex lg:items-center md:flex transition-all md:items-center
-      ${Scrolling ? 'backdrop-blur-2xl p-2' : 'bg-transparent p-1'}
+      ${Scrolling ? 'bg-grey backdrop-blur-2xl p-2' : 'bg-transparent p-1'}
       `}
       >
         <div>
@@ -88,10 +88,10 @@ export default function Navbar() {
             </button>
           </li>
           <li>
-            <button onClick={() => navigate('#')}>ABOUT US</button>
+            <button onClick={() => navigate('#roboabout')}>ABOUT US</button>
           </li>
           <li>
-            <button onClick={() => navigate('#')}>TEAM</button>
+            <button onClick={() => navigate('#roboteam')}>TEAM</button>
           </li>
           <li>
             <button onClick={() => navigate('#')}>RULEBOOK</button>

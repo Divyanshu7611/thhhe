@@ -16,7 +16,7 @@ export default function About() {
             }}
           >
             <Image
-              src="/static/thar-logo.png"
+              src="/events/AboutRc.png"
               alt=""
               width="500"
               height="500"
@@ -30,14 +30,12 @@ export default function About() {
         <div className="flex-grow w-1/2">
           <h1 className="mars text-2xl md:text-4xl mb-2">ABOUT RCNITRO</h1>
           <p className="text-sm md:text-xl tracking-wide md:text-justify">
-            Welcome to the adrenaline-pumping battlefield of Robo-War! In this event, participants craft and unleash
-            their innovative genius by designing and constructing remote-controlled or autonomous robots primed for
-            simulated combat. These mechanical gladiators are armed with an array of offensive and defensive weaponry,
-            armor, and maneuverability features. Engage in intense showdowns as these robots clash in simulated battles,
-            displaying tactical prowess, resilience, and technological prowess. Whether you are a mastermind in robotics
-            or a newcomer to engineering marvels, Robo-War offers an electrifying platform to witness the ultimate clash
-            of machines. Join us for a riveting spectacle where creativity meets combat, and witness the epic battles
-            unfold in this thrilling Robo-War event!
+            Rev up your engines for the heart-pounding RC Nitro Championship! Experience the adrenaline rush of scaled
+            car and buggy racing at its finest, with powerful 1:10 and 1:8 models fueled by nitro-based adrenaline. Feel
+            the thrill as these miniature beasts tear up the track with incredible speed and precision. Whether you are
+            a seasoned racer or a newcomer to the RC world, this championship promises high-octane excitement, intense
+            competition, and roaring engines. Join us for a day of exhilarating races, nail-biting moments, and the
+            chance to showcase your skills in the electrifying world of RC Nitro racing
           </p>
         </div>
       </section>

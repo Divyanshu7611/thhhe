@@ -1,10 +1,38 @@
 'use client'
-import { signOut } from 'next-auth/react'
+import { events as Events } from '@/utils/events'
+import { signOut, useSession } from 'next-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+
+async function getRegisteredEvents(id, tharID) {
+  const eventsReq = await fetch('/api/events/getRegisteredEvents', {
+    method: 'post',
+    body: JSON.stringify({
+      id: id,
+      tharID: tharID,
+    }),
+  })
+
+  const res = await eventsReq.json()
+
+  return res
+}
 
 export default function UserDashboard({ caData }: { caData: any }) {
+  const [events, setEvents] = useState(null)
+  const session = useSession()
+
+  useEffect(() => {
+    async function handle() {
+      if (session.status === 'authenticated') {
+        const data = await getRegisteredEvents(session.data.user.id, session.data.user.tharID)
+        setEvents(data.data)
+      }
+    }
+    handle()
+  }, [])
+
   return (
     <section className="min-h-screen w-full max-w-[75rem] mx-auto mt-36">
       <div
@@ -22,7 +50,7 @@ export default function UserDashboard({ caData }: { caData: any }) {
           <div className="w-full flex flex-wrap items-center justify-center p-4 py-6 gap-x-12">
             <div className="h-24 aspect-square rounded-full overflow-hidden">
               <Image
-                src={caData.image}
+                src={session.data.user.image}
                 height={100}
                 width={100}
                 loading="lazy"
@@ -34,7 +62,7 @@ export default function UserDashboard({ caData }: { caData: any }) {
               <div className="text-center">
                 {/* <h5>Name</h5> */}
                 <h2 className="">
-                  {caData.name} ({caData.tharID})
+                  {session.data.user.name} ({session.data.user.tharID})
                 </h2>
               </div>
               <div className="text-center">
@@ -52,44 +80,51 @@ export default function UserDashboard({ caData }: { caData: any }) {
             </button>
           </div>
 
-          <div role="tablist" className="tabs tabs-boxed font-bold mb-2">
+          {/* <div role="tablist" className="tabs tabs-boxed font-bold mb-2">
             <a role="tab" className="tab tab-active">
               Competitions
             </a>
             <a role="tab" className="tab">
               Events
             </a>
-          </div>
+          </div> */}
 
           <div className="overflow-x-auto min-w-full md:px-8">
-            <table className="table table-zebra">
-              {/* head */}
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Event Name</th>
-                  <th>Team Name</th>
-                  <th>Payment</th>
-                </tr>
-              </thead>
-              <tbody>
-                {/* row 1 */}
-                {/* <tr>
-                  <th>1</th>
-                  <td>TGKC</td>
-                  <td>ANIGAR</td>
-                  <td>Done</td>
-                </tr> */}
-              </tbody>
-            </table>
+            {events && (
+              <table className="table table-zebra">
+                {/* head */}
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Event Name</th>
+                    <th>Team Name</th>
+                    <th>Total Members</th>
+                    <th>Payment Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {events.map((event, index) => (
+                    <tr key={event}>
+                      <th>{index + 1}</th>
+                      <td>{Events.find(o => o.id === event.eventID).eventName}</td>
+                      <td>{event.teamName}</td>
+                      <td>{event.teamMembersTharID.length}</td>
+                      <td>{event.paymentStatus ? 'done' : 'pending'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
           </div>
 
-          <div className="h-48 flex items-center justify-center flex-col">
-            <span>No Events?</span>
-            <Link href={'/#events'} className="link">
-              Choose One
-            </Link>
-          </div>
+          {!events && (
+            <div className="h-48 flex items-center justify-center flex-col">
+              <span>No Events?</span>
+              <Link href={'/#events'} className="link">
+                Choose One
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </section>

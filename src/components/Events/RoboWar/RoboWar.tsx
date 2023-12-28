@@ -32,12 +32,18 @@ export default function Starts() {
                   <span className="text-[#ff6b00]">PRECISION</span>
                 </h3>
               </div>
-              <div className="regButton mx-auto md:mx-0">
+              <div className="regButton mx-auto md:mx-0 flex md:flex-row flex-col gap-5">
                 <button
-                  className="bg-blue-950 px-5 py-2 rounded-lg font-bold"
-                  onClick={() => router.push('/robowar/register')}
+                  className="bg-blue-950 hover:bg-blue-500 px-5 py-2 rounded-lg font-bold"
+                  onClick={() => router.push('/competitions/8F39B429')}
                 >
-                  REGISTER NOW
+                  REGISTER ( 15 KG )
+                </button>
+                <button
+                  className="bg-blue-950 hover:bg-blue-500 px-5 py-2 rounded-lg font-bold"
+                  onClick={() => router.push('/competitions/FD40EE2B')}
+                >
+                  REGISTER ( 30 KG )
                 </button>
               </div>
             </div>

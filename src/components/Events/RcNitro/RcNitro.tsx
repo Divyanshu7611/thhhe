@@ -28,8 +28,8 @@ export default function Starts() {
               </div>
               <div className="regButton mx-auto md:mx-0">
                 <button
-                  className="bg-blue-950 px-5 py-2 rounded-lg font-bold"
-                  onClick={() => router.push('rcnitro/register')}
+                  className="bg-blue-950 hover:bg-blue-500 px-5 py-2 rounded-lg font-bold"
+                  onClick={() => router.push('/competitions/80A3A948')}
                 >
                   REGISTER NOW
                 </button>

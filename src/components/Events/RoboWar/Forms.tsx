@@ -14,7 +14,7 @@ export default function Form({ id, captainId }: { id: string; captainId: string 
   })
   // function part
   function addMemberInput() {
-    if (memberFormRef.current.childElementCount < 15) {
+    if (memberFormRef.current.childElementCount < 4) {
       const elementCout = memberFormRef.current.childElementCount + 1
       const node = document.createElement('input')
       node.classList.add('input', 'input-bordered', 'max-w-xs', 'mt-4')
@@ -98,7 +98,7 @@ export default function Form({ id, captainId }: { id: string; captainId: string 
             </button>
           </form>
           <form
-            className={`bg-black/70 py-12 max-w-xs w-full mx-auto flex flex-col items-center justify-start px-8`}
+            className={`bg-black/70 md:mt-0 mt-5 py-12 max-w-xs w-full mx-auto flex flex-col items-center justify-start px-8`}
             onSubmit={async e => {
               e.preventDefault()
             }}

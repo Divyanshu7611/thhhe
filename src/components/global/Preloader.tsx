@@ -8,7 +8,6 @@ export default function Preloader() {
 
   useLayoutEffect(() => {
     setLoaded(false)
-    console.log('layout')
   }, [pathname])
 
   useEffect(() => {
@@ -16,7 +15,6 @@ export default function Preloader() {
       setLoaded(true)
     }, 500)
 
-    console.log('normal')
   }, [pathname])
 
   return (

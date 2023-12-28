@@ -16,7 +16,7 @@ const authOptions: NextAuthOptions = {
       const tharID = v4().toString().split('-')[0].toUpperCase()
 
       const { name, email, image } = session.user
-      await RegisterUser(tharID, name, email, image, false, false, false, false).then(async data => {
+      await RegisterUser(tharID, name, email, image, false, false, false, false, false, false).then(async data => {
         session.user['id'] = await data.id
         session.user['tharID'] = await data.tharID
         session.user['caRegistered'] = await data.caRegistered
@@ -24,6 +24,7 @@ const authOptions: NextAuthOptions = {
         session.user['isMunRegistered'] = await data.userRegistered
         session.user['isRoboWarRegistered'] = await data.userRegistered
         session.user['isRcNitroRegistered'] = await data.userRegistered
+        session.user['isGoKartRegistered'] = await data.userRegistered
       })
 
       return session

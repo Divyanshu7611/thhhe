@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
   isMunRegistered: Boolean,
   isRoboWarRegistered: Boolean,
   isRcNitroRegistered: Boolean,
+  isGoKartRegistered: Boolean,
 })
 
 const User = mongoose.models.users || mongoose.model('users', userSchema)

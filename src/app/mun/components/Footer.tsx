@@ -26,8 +26,6 @@ export default function Footer() {
   }
   function submitHandler(event) {
     event.preventDefault()
-    console.log('query is Submitted SuccessFully')
-    console.log(formData)
   }
   return (
     <div className="bg-[#070624] text-white justify-center flex text-[Roboto] overflow-x-hidden overflow-y-auto">

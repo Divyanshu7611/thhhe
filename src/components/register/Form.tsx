@@ -280,7 +280,6 @@ export default function Form({
             onChange={e => {
               refRef.current = e.target.value
             }}
-            value={cacode}
           />
         </div>
 

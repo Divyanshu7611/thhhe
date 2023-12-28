@@ -17,8 +17,6 @@ export default function Contact() {
   }
   function submitHandler(event) {
     event.preventDefault()
-    console.log('Contact data is Submitted SuccessFully')
-    console.log(formData)
   }
   return (
     <div className="bg-white text-black flex justify-center" id="cont">

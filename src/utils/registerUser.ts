@@ -10,6 +10,8 @@ export default async function RegisterUser(
   userRegistered: boolean,
   isMunRegistered: boolean,
   isRoboWarRegistered: boolean,
+  isRcNitroRegistered: boolean,
+  isGoKartRegistered: boolean,
 ) {
   try {
     await ConnectMongoDB()
@@ -26,6 +28,8 @@ export default async function RegisterUser(
         userRegistered,
         isMunRegistered,
         isRoboWarRegistered,
+        isRcNitroRegistered,
+        isGoKartRegistered,
       })
 
       await DisconnectMongoDB()
@@ -34,7 +38,5 @@ export default async function RegisterUser(
     } else {
       return user
     }
-  } catch (error) {
-    console.log(error)
-  }
+  } catch (error) {}
 }

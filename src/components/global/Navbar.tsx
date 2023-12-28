@@ -59,13 +59,30 @@ export default function Navbar() {
 
         <ul className="w-full text-2xl flex flex-col items-center justify-center space-y-4">
           <li onClick={toggleMenu}>
+            <Link href="/accomodation">Accomodation</Link>
+          </li>
+          <li onClick={toggleMenu}>
             <Link href="/competitions">Competitions</Link>
           </li>
           <li onClick={toggleMenu}>
-            <Link href="/workshops">workshops</Link>
+            <Link href="/workshops">Workshops</Link>
           </li>
           <li onClick={toggleMenu}>
-            <Link href="/events">Events</Link>
+            <ul className="w-full text-2xl flex flex-col items-center justify-center space-y-4">
+              <li>
+                <Link href={'/mun'}>MUN</Link>
+              </li>
+
+              <li>
+                <Link href={'/robowar'}>Robowar</Link>
+              </li>
+              <li>
+                <Link href={'/rcnitro'}>RC Nitro</Link>
+              </li>
+              <li>
+                <Link href={'/gokart'}>Go Kart</Link>
+              </li>
+            </ul>
           </li>
           <li onClick={toggleMenu}>
             <Link href="/sponsors">Sponsors</Link>
@@ -105,10 +122,10 @@ export default function Navbar() {
                   <Link href={'/robowar'}>Robowar</Link>
                 </li>
                 <li>
-                  <Link href={'/'}>TGKC</Link>
+                  <Link href={'/rcnitro'}>RC Nitro</Link>
                 </li>
                 <li>
-                  <Link href={'/rcnitro'}>RC Nitro</Link>
+                  <Link href={'/gokart'}>GO Kart</Link>
                 </li>
               </ul>
             </div>
@@ -141,8 +158,9 @@ export default function Navbar() {
         </div>
         <ul className="hidden lg:flex items-center justify-end gap-x-8">
           <li>
-            <Link href="/sponsors">Sponsors</Link>
+            <Link href="/accomodation">Accomodation</Link>
           </li>
+
           <li>
             <Link href="/ca">CA</Link>
           </li>

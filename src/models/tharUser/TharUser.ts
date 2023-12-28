@@ -17,6 +17,8 @@ const tharUserSchema = new mongoose.Schema({
   graduationYear: String,
 
   referralCode: String,
+
+  registeredEvents: Array,
 })
 
 const TharUser = mongoose.models.tharuser || mongoose.model('tharuser', tharUserSchema)

@@ -2,6 +2,7 @@ import React from 'react'
 import gokart from '../assets/gokart.jpg'
 import Image from 'next/image'
 import background from '../assets/Main.png'
+import Link from 'next/link'
 
 export default function Starts() {
   return (
@@ -25,7 +26,9 @@ export default function Starts() {
                 </h3>
               </div>
               <div className="regButton mx-auto md:mx-0">
-                <button className="bg-blue-950 px-5 py-2 rounded-lg font-bold">REGISTER NOW</button>
+                <button className="bg-blue-950 hover:bg-blue-500 px-5 py-2 rounded-lg font-bold">
+                  <Link href="/competitions/16EE61FF">REGISTER NOW</Link>
+                </button>
               </div>
             </div>
           </div>

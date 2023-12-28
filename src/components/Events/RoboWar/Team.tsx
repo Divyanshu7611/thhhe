@@ -5,7 +5,7 @@ export default function Team() {
   return (
     <section
       className="max-w-7xl flex items-center justify-center mx-auto bg-white/20 mt-8 p-1"
-      id="roboabout"
+      id="roboteam"
       style={{
         clipPath: 'polygon(50px 0, 100% 0, 100% calc(100% - 50px), calc(100% - 50px) 100%, 0 100%, 0 50px)',
       }}
@@ -22,7 +22,7 @@ export default function Team() {
             <br /> <span className="text-lg md:text-2xl">Civil Branch</span>
           </h1>
 
-          <TeamCard name={'RoboWar'} imgUrl={'/teachers/vc.jpg'} post={'Coordinator'} />
+          <TeamCard name={'RoboWar'} imgUrl={'/teachers/unknown.jpg'} post={'Coordinator'} />
         </div>
       </main>
     </section>
