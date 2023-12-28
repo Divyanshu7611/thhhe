@@ -39,10 +39,10 @@ export default function About() {
               <p className="text-md md:text-xl text-justify">
                 THAR, the flagship techno-management fest of Rajasthan Technical University, Kota, is a three-day event
                 that provides a platform for students to showcase their technical and management skills, network with
-                industry experts, and learn from successful entrepreneurs. The fest's theme, "Navigating the Technical
-                Dunes," reflects the ever-changing and challenging landscape of the tech industry, and the need for
-                students to be adaptable, skilled, and resourceful. Each day of the fest features a variety of events,
-                including competitions, workshops, and pronites
+                industry experts, and learn from successful entrepreneurs. The fest&apos;s theme, &quot;Navigating the
+                Technical Dunes,&quot; reflects the ever-changing and challenging landscape of the tech industry, and
+                the need for students to be adaptable, skilled, and resourceful. Each day of the fest features a variety
+                of events, including competitions, workshops, and pronites
               </p>
             </div>
           </div>
@@ -59,9 +59,9 @@ export default function About() {
               <li>
                 Confirmed Accommodation can be cancelled through email only. Send an e-mail having your Acco ID and the
                 number of members for whom accommodation has to be cancelled, at thar.techfest@rtu.ac.in. The subject of
-                the email should be ""Cancellation of Accommodation"" For any cancellations before deadline, 80% of the
-                total amount shall be refunded after the festival. There shall be no refunds for cancellation after the
-                deadline.Deadline of cancellation: 18th JANUARY 2024.
+                the email should be &quot;&quot;Cancellation of Accommodation&quot;&quot; For any cancellations before
+                deadline, 80% of the total amount shall be refunded after the festival. There shall be no refunds for
+                cancellation after the deadline.Deadline of cancellation: 18th JANUARY 2024.
               </li>
             </ol>
           </div>
@@ -71,8 +71,8 @@ export default function About() {
             <ol className="list-decimal flex flex-col gap-5 p-5 font-semibold md:text-lg text-sm text-justify">
               <li>
                 All guests carrying electronic items of any kind will have to declare them at the RTU Kota main gate
-                through a "Gate Pass". The belongings will also be checked on the way out of RTU Kota along with the
-                "Gate Pass", failing to do so will result in the belongings being impounded.
+                through a &apos;Gate Pass&apos;. The belongings will also be checked on the way out of RTU Kota along
+                with the &apos;Gate Pass&apos;, failing to do so will result in the belongings being impounded.
               </li>
               <li>
                 All guests are required to carry their valid government photo ID proofs at all times. In addition, the
@@ -88,7 +88,10 @@ export default function About() {
                 Any commodities issued to the guests would have to be returned in sound condition to the organizers
                 during check-out.
               </li>
-              <li>Entry will be only through the "Main Gate" of RTU Kota. All other gates will be closed for entry.</li>
+              <li>
+                Entry will be only through the &apos;Main Gate&apos; of RTU Kota. All other gates will be closed for
+                entry.
+              </li>
               <li>
                 Random checks would be made to avoid any illegal stay at the campus. Any team failing to produce their
                 electronic/physical receipts of accommodation would be heavily fined and disqualified.
