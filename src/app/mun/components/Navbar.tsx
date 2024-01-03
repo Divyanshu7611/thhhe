@@ -61,17 +61,13 @@ const Navbar = () => {
               <button onClick={() => navigate('/mun')}>Home</button>
             </li>
             <li>
-              <button onClick={() => navigate('/mun/committe')}>Committee</button>
+              <button onClick={() => navigate('/mun#committe')}>Committee</button>
             </li>
+
             <li>
-              <button onClick={() => navigate('/mun/committe/#team')}>Team</button>
+              <button onClick={() => navigate('/mun/#foot')}>Contact</button>
             </li>
-            <li>
-              <button onClick={() => navigate('/mun/committe/#cont')}>Contact</button>
-            </li>
-            <li>
-              <button onClick={() => navigate('/mun/committe/#faq')}>FAQ</button>
-            </li>
+
             <li>
               <button onClick={() => navigate('/')}>Go Back</button>
             </li>
@@ -97,16 +93,11 @@ const Navbar = () => {
             <button onClick={() => navigate('/mun')}>Home</button>
           </li>
           <li>
-            <button onClick={() => navigate('/mun/committe')}>Committee</button>
+            <button onClick={() => navigate('/mun/#committe')}>Committee</button>
           </li>
+
           <li>
-            <button onClick={() => navigate('/mun/committe/#team')}>Team</button>
-          </li>
-          <li>
-            <button onClick={() => navigate('/mun/committe/#cont')}>Contact</button>
-          </li>
-          <li>
-            <button onClick={() => navigate('/mun/committe/#faq')}>FAQ</button>
+            <button onClick={() => navigate('/mun/#foot')}>Contact</button>
           </li>
         </ul>
         <Image alt="" src={tharlogo} height={60} width={60} />

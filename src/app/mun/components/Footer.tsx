@@ -1,19 +1,6 @@
 'use client'
 import React, { useState } from 'react'
 
-const links = [
-  'Home',
-  'About us',
-  'Connect',
-  'Team',
-  'Events',
-  'Contact',
-  'Facebook',
-  'Instagram',
-  'Twitter',
-  'Youtube',
-]
-
 export default function Footer() {
   const [formData, setData] = useState({ query: '' })
   function changeHandler(event) {
@@ -28,7 +15,10 @@ export default function Footer() {
     event.preventDefault()
   }
   return (
-    <div className="bg-[#070624] text-white justify-center flex text-[Roboto] overflow-x-hidden overflow-y-auto">
+    <div
+      className="bg-[#070624] text-white justify-center flex text-[Roboto] overflow-x-hidden overflow-y-auto"
+      id="foot"
+    >
       {/* For mobiles */}
       <div className="flex flex-col gap-3 w-full mobfoot p-5 justify-center">
         <div>

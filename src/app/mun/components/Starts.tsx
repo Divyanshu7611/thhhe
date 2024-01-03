@@ -65,7 +65,10 @@ export default function Starts() {
             {/* left side div */}
             <div className="flex flex-col">
               <div className="w-full regButton">
-                <button className="border bg-[#C9984E] px-5 py-2 font-medium" onClick={() => navigate('/mun/register')}>
+                <button
+                  className="border bg-[#C9984E] px-5 py-2 font-medium"
+                  onClick={() => navigate('/competitions/33B59EE6')}
+                >
                   Register
                 </button>
               </div>

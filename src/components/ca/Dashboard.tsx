@@ -2,8 +2,60 @@
 import { signOut } from 'next-auth/react'
 import Image from 'next/image'
 import React from 'react'
+import { useState, useEffect } from 'react'
 
+async function getAllUsers() {
+  try {
+    const response = await fetch('/api/user/getAllUser')
+    if (!response.ok) {
+      throw new Error('Failed to fetch Users')
+    }
+    return await response.json()
+  } catch (error) {
+    console.error('Error Fetching Users:', error)
+    return []
+  }
+}
 export default function Dashboard({ caData }: { caData: any }) {
+  const [referallUsersCount, setReferralUsersCount] = useState<any[]>([])
+  useEffect(() => {
+    async function fetchReferralUsersCount() {
+      try {
+        const allUsers = await getAllUsers()
+        const matchedUsers = allUsers.filter((user: any) => user.referralCode === caData.caCode)
+        const userDetails = matchedUsers.map((user: any) => ({
+          name: user.name,
+          tharPayment: user.tharPayment,
+          tharID: user.tharID,
+        }))
+        setReferralUsersCount(userDetails)
+        console.log(matchedUsers)
+      } catch (error) {
+        console.error('Error fetching users:', error)
+      }
+    }
+    fetchReferralUsersCount()
+  }, [caData.caCode])
+  // async function userData(id: string, tharID: string, referralCode: string, name: string) {
+  //   const referallUser = await fetch('/api/user/register', {
+  //     method: 'post',
+  //     body: JSON.stringify({
+  //       id: id,
+  //       tharID: tharID,
+  //       referralCode: referralCode,
+  //       userName: name,
+  //     }),
+  //   })
+
+  //   if (referralCode === caData.caCode) {
+  //     let arr = []
+  //     arr.push(name)
+  //     arr.forEach((names, index) => {
+  //       console.log('names of candidates', names)
+  //       console.log('h')
+  //     })
+  //   }
+
   return (
     <section className="min-h-screen w-full max-w-[75rem] mx-auto mt-36">
       <div
@@ -67,7 +119,34 @@ export default function Dashboard({ caData }: { caData: any }) {
                 <h3>{caData.tharID}</h3>
               </div>
             </div>
-            <div className="overflow-x-auto overflow-y-scroll h-96"></div>
+
+            <div className="overflow-x-auto overflow-y-scroll h-96">
+              <div className="text-center mt-10 bg-gray-950 rounded-xl justify-between flex gap-10 flex-col w-full">
+                <h3 className="text-center text-2xl">Referral Users </h3>
+                <h3 className="flex justify-center text-lg w-full">
+                  <ol className="list-decimal">
+                    {referallUsersCount.map((user, index) => (
+                      <li key={index} className="">
+                        <div className="flex justify-between gap-10 ">
+                          <div className="whitespace-break-spaces">
+                            Name: {'  '}
+                            {user.name}
+                          </div>
+                          <div className="whitespace-break-spaces">
+                            TharID: {'  '}
+                            {user.tharID}
+                          </div>
+                          <div className="whitespace-break-spaces">
+                            PaymentStatus: {'  '}
+                            {user.tharPayment ? '  Paid' : ' UnPaid'}
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>

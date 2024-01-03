@@ -18,7 +18,16 @@ const tharUserSchema = new mongoose.Schema({
 
   referralCode: String,
 
-  registeredEvents: Array,
+  tharPayment: {
+    type: Boolean,
+    default: false,
+  },
+  accomodationPayment: {
+    type: Boolean,
+    default: false,
+  },
+
+  // registeredEvents: Array,
 })
 
 const TharUser = mongoose.models.tharuser || mongoose.model('tharuser', tharUserSchema)

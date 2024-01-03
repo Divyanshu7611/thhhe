@@ -14,9 +14,12 @@ async function getRegisteredEvents(id, tharID) {
     }),
   })
 
-  const res = await eventsReq.json()
+  // console.log(await eventsReq.text())
 
-  return res
+  const res = await eventsReq.json()
+  console.log()
+
+  return res.data
 }
 
 export default function UserDashboard({ caData }: { caData: any }) {
@@ -26,12 +29,14 @@ export default function UserDashboard({ caData }: { caData: any }) {
   useEffect(() => {
     async function handle() {
       if (session.status === 'authenticated') {
-        const data = await getRegisteredEvents(session.data.user.id, session.data.user.tharID)
-        setEvents(data.data)
+        if (session.data.user) {
+          const data = await getRegisteredEvents(session.data.user.id, session.data.user.tharID)
+          setEvents(data)
+        }
       }
     }
     handle()
-  }, [])
+  }, [session])
 
   return (
     <section className="min-h-screen w-full max-w-[75rem] mx-auto mt-36">
@@ -70,6 +75,9 @@ export default function UserDashboard({ caData }: { caData: any }) {
                 <h4 className="">{caData.email}</h4>
               </div>
             </div>
+            <Link href={'/checkout'} className="btn btn-warning btn-sm">
+              Payments
+            </Link>
             <button
               className="btn btn-primary btn-sm"
               onClick={e => {

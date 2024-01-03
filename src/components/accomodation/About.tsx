@@ -32,7 +32,9 @@ export default function About() {
             >
               <Image src={'/static/deathStar.png'} alt="deathStar" width={250} height={250}></Image>
               <div className="form-control mt-6">
-                <button className="btn bg-orange-400 hover:bg-gray-400 text-black px-8">REGISTER NOW</button>
+                <button className="btn bg-orange-400 hover:bg-gray-400 text-black px-8">
+                  <Link href="/accomodation/checkout">REGISTER NOW</Link>
+                </button>
               </div>
             </div>
             <div className="w-full md:w-1/2">

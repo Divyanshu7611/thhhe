@@ -42,14 +42,31 @@ export default function Team() {
       >
         {/* <h1 className="mars text-4xl mb-2">Coordinators</h1> */}
         <div className="flex flex-col items-center gap-16">
-          <div>
-            <div className="flex flex-col items-center gap-4 mb-8">
-              <h1 className="text-2xl md:text-3xl">Chief-Patreon</h1>
-              <TeamCard name={'Prof. S.K. Singh'} imgUrl={'/teachers/vc.jpg'} post={'Vice Chancellor, RTU'} />
+          <div className="flex flex-col gap-10">
+            <div className="flex flex-col md:flex-row gap-10">
+              <div className="flex flex-col items-center gap-4 mb-8">
+                <h1 className="text-2xl md:text-3xl">Chief-Patreon</h1>
+                <TeamCard name={'Prof. S.K. Singh'} imgUrl={'/teachers/vc.jpg'} post={'Vice Chancellor, RTU'} />
+              </div>
+              <div className="flex flex-col items-center gap-4">
+                <h1 className="text-2xl md:text-3xl">Patreon</h1>
+                <TeamCard name={'Prof. A.K. Dwivedi'} imgUrl={'/teachers/dean.jpg'} post={'Dean SW & FA, RTU'} />
+              </div>
             </div>
             <div className="flex flex-col items-center gap-4">
-              <h1 className="text-2xl md:text-3xl">Patreon</h1>
-              <TeamCard name={'Prof. A.K. Dwivedi'} imgUrl={'/teachers/dean.jpg'} post={'Dean Student Welfare, RTU'} />
+              <h1 className="text-2xl md:text-3xl">Coordinator</h1>
+              <div className="flex flex-col md:flex-row gap-10">
+                <TeamCard
+                  name={'Prof. Dr. Brijesh Tripathi'}
+                  imgUrl={'/teachers/proctor.jpg'}
+                  post={'Cheif Proctor, RTU'}
+                />
+                <TeamCard
+                  name={'Prof. Dr. D.K Sambariya'}
+                  imgUrl={'/teachers/sambariyasir.jpg'}
+                  post={'THAR Coordinator, RTU'}
+                />
+              </div>
             </div>
           </div>
         </div>

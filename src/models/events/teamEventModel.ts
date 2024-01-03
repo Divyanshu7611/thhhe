@@ -6,7 +6,10 @@ const teamEventSchema = new mongoose.Schema({
   teamName: String,
   captainTharID: String,
   teamMembersTharID: Array,
-  paymentStatus: Boolean,
+  paymentStatus: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const TeamRegistration = mongoose.models.eventRegistration || mongoose.model('eventRegistration', teamEventSchema)

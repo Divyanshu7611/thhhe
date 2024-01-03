@@ -6,7 +6,6 @@ import TeamRegistration from '@/models/events/teamEventModel'
 
 export async function POST(request: Request) {
   const { id, tharID } = await request.json()
-
   try {
     await ConnectMongoDB()
     const user = await User.findOne({ _id: id })
@@ -15,21 +14,28 @@ export async function POST(request: Request) {
       const tharUser = await TharUser.findOne({ tharID: tharID })
 
       if (tharUser) {
-        const registeredEvents = tharUser.registeredEvents
-        if (registeredEvents) {
-          const events = await TeamRegistration.find({ teamMembersTharID: { $in: [tharID] } })
-
+        const events = await TeamRegistration.find({ teamMembersTharID: { $in: [tharID] } })
+        await DisconnectMongoDB()
+        if (events) {
           return NextResponse.json(
             {
               data: events,
             },
             {
-              status: 202,
+              status: 200,
+            },
+          )
+        } else {
+          return NextResponse.json(
+            {
+              message: 'Yaha bhi Gali sunega kya, BKL',
+            },
+            {
+              status: 403,
             },
           )
         }
       }
-      await DisconnectMongoDB()
     } else {
       return NextResponse.json(
         {
@@ -41,6 +47,13 @@ export async function POST(request: Request) {
       )
     }
   } catch (error) {
-    return NextResponse.error()
+    return NextResponse.json(
+      {
+        message: error,
+      },
+      {
+        status: 403,
+      },
+    )
   }
 }

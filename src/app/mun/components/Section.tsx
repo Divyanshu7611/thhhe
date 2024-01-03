@@ -22,23 +22,23 @@ export default function Section() {
               <span className="font-semibold">Dear Delegates, respected Faculty Advisors, and the Secretariat,</span>
               <br />
               <br />
-              It is my distinct honor and pleasure to invite you to Rajasthan Technical University Model United Nations
-              Conference set to occur from February 26th-28th, 2023. MUN challenges students to think outside the box,
+              It is my distinct honour and pleasure to invite you to Rajasthan Technical University Model United Nations
+              Conference set to occur from January 22th-23th, 2024. MUN challenges students to think outside the box,
               and come up with creative solutions while acquiring skills in public speaking, leadership, and teamwork.
               We look forward to opening our doors to a diversity of thoughts and constructive, thought-provoking
-              discussions.
+              discussions
               <br />
               <br />
-              This year’s conference will consist of five committees: The United Nations Security Council, The
-              International Press, The Disarmament and International Security Committee, The All India Political Parties
-              Meet and The Ministry of Magic to make things interesting. The conference will continue to put forward
-              thrilling simulations which allow delegates to react with regard to real-life situations.
+              This year’s conference will consist of three committees: The United Nations General Assembly, The
+              International Monetary Fund, and The All India Political Parties Meet to make things interesting. The
+              conference will continue to put forward thrilling simulations which allow delegates to react with regard
+              to real-life situations.
               <br />
               <br />
               We would like to extend our sincerest welcome to all participants of the first session of RTU Model United
-              Nations 2023. We would also like to avail this opportunity to express our deepest appreciation to all
-              delegates, chairs, and volunteers for their endeavor to attend and contribute to the simulation of the
-              United Nations at Rajasthan Technical University. We are honored and privileged to work with you on the
+              Nations 2024. We would also like to avail this opportunity to express our deepest appreciation to all
+              delegates, chairs, and volunteers for their endeavour to attend and contribute to the simulation of the
+              United Nations at Rajasthan Technical University. We are honoured and privileged to work with you on the
               United Nations agenda.
               <br />
               <br />
@@ -50,14 +50,14 @@ export default function Section() {
               We believe that the Delegates will jointly discharge the essential diplomatic responsibilities mandated to
               them by the Secretariat. Even though this is the first session of RTU Model United Nations, we assure all
               delegates and chairs that we shall put paramount efforts to ensure that the work is carried out adequately
-              and that our endeavors meet with success.
+              and that our endeavours meet with success.
               <br />
               <br />
               MUN-RTU is not only a conference that will benefit you on an academic level, considering your opportunity
               to broaden your knowledge and put it to use in engaging debates but it is also your chance to meet new
               people and create indelible memories. Do not miss out on such an experience and prepare yourself as you
               grab this amazing opportunity. I offer all of my best wishes to you and look forward to seeing you at RTU
-              MUN 2023.
+              MUN 2024.
             </p>
           </div>
           <p className="text-base md:text-lg font-semibold mt-6">
@@ -65,7 +65,7 @@ export default function Section() {
             <br />
             Secretary-General
             <br />
-            Pradhuman
+            Govind Madan
             <br />
             MUN RTU
           </p>
